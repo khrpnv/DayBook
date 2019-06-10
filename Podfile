@@ -8,4 +8,6 @@ target 'DayBook' do
   # Pods for DayBook
   pod 'GoogleSignIn'
   pod 'GoogleAPIClientForREST/Drive'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 end

@@ -15,6 +15,8 @@
 		EA225DBE22AD8CF800C0DC01 /* TODOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA225DBD22AD8CF800C0DC01 /* TODOViewController.swift */; };
 		EA225DC022AD8D0B00C0DC01 /* MailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA225DBF22AD8D0B00C0DC01 /* MailsViewController.swift */; };
 		EA225DC222AD8D1F00C0DC01 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA225DC122AD8D1F00C0DC01 /* BudgetViewController.swift */; };
+		EA274B7E22ADB75E004E77C7 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA274B7D22ADB75E004E77C7 /* WeatherManager.swift */; };
+		EA274B8022ADBABD004E77C7 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA274B7F22ADBABD004E77C7 /* WeatherData.swift */; };
 		EA6C17B922ABA8D300AE2C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6C17B822ABA8D300AE2C5E /* AppDelegate.swift */; };
 		EA6C17BE22ABA8D300AE2C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6C17BC22ABA8D300AE2C5E /* Main.storyboard */; };
 		EA6C17C322ABA8D300AE2C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6C17C122ABA8D300AE2C5E /* LaunchScreen.storyboard */; };
@@ -36,6 +38,8 @@
 		EA225DBD22AD8CF800C0DC01 /* TODOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOViewController.swift; sourceTree = "<group>"; };
 		EA225DBF22AD8D0B00C0DC01 /* MailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailsViewController.swift; sourceTree = "<group>"; };
 		EA225DC122AD8D1F00C0DC01 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
+		EA274B7D22ADB75E004E77C7 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		EA274B7F22ADBABD004E77C7 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		EA6C17B522ABA8D300AE2C5E /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6C17B822ABA8D300AE2C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6C17BD22ABA8D300AE2C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				EA11C81422AD695800D3FE84 /* User.swift */,
+				EA274B7D22ADB75E004E77C7 /* WeatherManager.swift */,
+				EA274B7F22ADBABD004E77C7 /* WeatherData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,17 +297,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DayBook/Pods-DayBook-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -321,9 +331,11 @@
 				EA225DBA22AD8B9B00C0DC01 /* NotesViewController.swift in Sources */,
 				EA225DC022AD8D0B00C0DC01 /* MailsViewController.swift in Sources */,
 				EAA837C022AD6F1700B0FA4D /* UIView+extension.swift in Sources */,
+				EA274B7E22ADB75E004E77C7 /* WeatherManager.swift in Sources */,
 				EA225DBC22AD8CE700C0DC01 /* WeatherViewController.swift in Sources */,
 				EA225DC222AD8D1F00C0DC01 /* BudgetViewController.swift in Sources */,
 				EA11C81522AD695800D3FE84 /* User.swift in Sources */,
+				EA274B8022ADBABD004E77C7 /* WeatherData.swift in Sources */,
 				EAA837C522AD76C000B0FA4D /* UIButton+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
