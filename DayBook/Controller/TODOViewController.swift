@@ -31,11 +31,6 @@ class TODOViewController: UIViewController {
         setupObservers()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        TODOManager.instance.writeTasksIntoFile()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destVC = segue.destination as? ChatViewController{
             if segue.identifier == "shareTask"{
