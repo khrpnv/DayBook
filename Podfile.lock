@@ -22,12 +22,22 @@ PODS:
   - GTMSessionFetcher/Core (1.2.2)
   - GTMSessionFetcher/Full (1.2.2):
     - GTMSessionFetcher/Core (= 1.2.2)
+  - InputBarAccessoryView (4.2.2)
+  - LetterAvatarKit (1.1.8)
+  - MessageKit (3.0.0):
+    - InputBarAccessoryView (~> 4.2.2)
+  - Scaledrone (0.5.0):
+    - Starscream (~> 3.1.0)
+  - Starscream (3.1.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - GoogleAPIClientForREST/Drive
   - GoogleSignIn
+  - LetterAvatarKit
+  - MessageKit
+  - Scaledrone
   - SwiftyJSON
 
 SPEC REPOS:
@@ -37,6 +47,11 @@ SPEC REPOS:
     - GoogleSignIn
     - GoogleToolboxForMac
     - GTMSessionFetcher
+    - InputBarAccessoryView
+    - LetterAvatarKit
+    - MessageKit
+    - Scaledrone
+    - Starscream
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -45,8 +60,13 @@ SPEC CHECKSUMS:
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  InputBarAccessoryView: 2b937602598e2fab3149f37f51dd7ad795653812
+  LetterAvatarKit: 7fd1ac138a92bb1e1be2f47093c0cbe31e288e39
+  MessageKit: e892a9ca49ebe6d82684d3a93ad84021fa23e2c6
+  Scaledrone: 7fc6a9ab8e969b0df53fe14b54217db8ddf0715a
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 24086c1e11aec2e7d6ef067fd397bd35efc65ad1
+PODFILE CHECKSUM: 99caf090c6b9fab295a09d4f622f1cce62cb09ec
 
 COCOAPODS: 1.5.3

@@ -14,6 +14,12 @@
 		EA225DBC22AD8CE700C0DC01 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA225DBB22AD8CE700C0DC01 /* WeatherViewController.swift */; };
 		EA225DBE22AD8CF800C0DC01 /* TODOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA225DBD22AD8CF800C0DC01 /* TODOViewController.swift */; };
 		EA225DC222AD8D1F00C0DC01 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA225DC122AD8D1F00C0DC01 /* BudgetViewController.swift */; };
+		EA30050C22AEED64004911CB /* ChatStartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30050B22AEED64004911CB /* ChatStartPageViewController.swift */; };
+		EA30050E22AEEF72004911CB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30050D22AEEF72004911CB /* Message.swift */; };
+		EA30051022AEF068004911CB /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30050F22AEF068004911CB /* UIColor+extension.swift */; };
+		EA30051222AEF096004911CB /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30051122AEF096004911CB /* ChatService.swift */; };
+		EA30051422AF0CCF004911CB /* NSNotification+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30051322AF0CCF004911CB /* NSNotification+extension.swift */; };
+		EA30051822AF13F1004911CB /* TODOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30051722AF13F1004911CB /* TODOManager.swift */; };
 		EA6C17B922ABA8D300AE2C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6C17B822ABA8D300AE2C5E /* AppDelegate.swift */; };
 		EA6C17BE22ABA8D300AE2C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6C17BC22ABA8D300AE2C5E /* Main.storyboard */; };
 		EA6C17C322ABA8D300AE2C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6C17C122ABA8D300AE2C5E /* LaunchScreen.storyboard */; };
@@ -35,6 +41,12 @@
 		EA225DBB22AD8CE700C0DC01 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		EA225DBD22AD8CF800C0DC01 /* TODOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOViewController.swift; sourceTree = "<group>"; };
 		EA225DC122AD8D1F00C0DC01 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
+		EA30050B22AEED64004911CB /* ChatStartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStartPageViewController.swift; sourceTree = "<group>"; };
+		EA30050D22AEEF72004911CB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		EA30050F22AEF068004911CB /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		EA30051122AEF096004911CB /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		EA30051322AF0CCF004911CB /* NSNotification+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+extension.swift"; sourceTree = "<group>"; };
+		EA30051722AF13F1004911CB /* TODOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOManager.swift; sourceTree = "<group>"; };
 		EA6C17B522ABA8D300AE2C5E /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6C17B822ABA8D300AE2C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6C17BD22ABA8D300AE2C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				EA11C81422AD695800D3FE84 /* User.swift */,
+				EA30050D22AEEF72004911CB /* Message.swift */,
+				EA30051122AEF096004911CB /* ChatService.swift */,
+				EA30051722AF13F1004911CB /* TODOManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +148,7 @@
 				EA225DBD22AD8CF800C0DC01 /* TODOViewController.swift */,
 				EA225DC122AD8D1F00C0DC01 /* BudgetViewController.swift */,
 				EADFE68222AE554900224F31 /* ChatViewController.swift */,
+				EA30050B22AEED64004911CB /* ChatStartPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -154,6 +170,8 @@
 			children = (
 				EAA837BF22AD6F1700B0FA4D /* UIView+extension.swift */,
 				EAA837C422AD76C000B0FA4D /* UIButton+extension.swift */,
+				EA30050F22AEF068004911CB /* UIColor+extension.swift */,
+				EA30051322AF0CCF004911CB /* NSNotification+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +313,11 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/InputBarAccessoryView/InputBarAccessoryView.framework",
+				"${BUILT_PRODUCTS_DIR}/LetterAvatarKit/LetterAvatarKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Scaledrone/Scaledrone.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -305,6 +328,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputBarAccessoryView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LetterAvatarKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Scaledrone.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,11 +350,17 @@
 				EA225DBE22AD8CF800C0DC01 /* TODOViewController.swift in Sources */,
 				EA6C17CB22ABAA2C00AE2C5E /* SignInViewController.swift in Sources */,
 				EA6C17B922ABA8D300AE2C5E /* AppDelegate.swift in Sources */,
+				EA30051022AEF068004911CB /* UIColor+extension.swift in Sources */,
+				EA30050C22AEED64004911CB /* ChatStartPageViewController.swift in Sources */,
 				EA225DBA22AD8B9B00C0DC01 /* NotesViewController.swift in Sources */,
 				EAA837C022AD6F1700B0FA4D /* UIView+extension.swift in Sources */,
 				EA225DBC22AD8CE700C0DC01 /* WeatherViewController.swift in Sources */,
 				EA225DC222AD8D1F00C0DC01 /* BudgetViewController.swift in Sources */,
+				EA30051422AF0CCF004911CB /* NSNotification+extension.swift in Sources */,
+				EA30051222AEF096004911CB /* ChatService.swift in Sources */,
 				EA11C81522AD695800D3FE84 /* User.swift in Sources */,
+				EA30050E22AEEF72004911CB /* Message.swift in Sources */,
+				EA30051822AF13F1004911CB /* TODOManager.swift in Sources */,
 				EADFE68322AE554900224F31 /* ChatViewController.swift in Sources */,
 				EAA837C522AD76C000B0FA4D /* UIButton+extension.swift in Sources */,
 			);

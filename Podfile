@@ -10,4 +10,7 @@ target 'DayBook' do
   pod 'GoogleAPIClientForREST/Drive'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Scaledrone'
+  pod 'MessageKit'
+  pod 'LetterAvatarKit'
 end
