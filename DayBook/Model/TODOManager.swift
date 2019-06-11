@@ -11,26 +11,38 @@ import Foundation
 class TODOManager{
     public static let instance = TODOManager()
     private init(){
-        initializeTasks()
     }
-    private var tasks: [String: [String]] = [:]
-    
-    private func initializeTasks(){
-        let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-        for weekday in weekdays{
-            tasks[weekday] = []
-        }
-    }
-    
+    private var tasks: [String] = []
+
     func addTask(text taskText:String){
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let weekday = dateFormatter.string(from: date)
-        tasks[weekday]?.append(taskText)
+        tasks.append(taskText)
+    }
+    
+    func removeTask(at index: Int){
+        tasks.remove(at: index)
     }
     
     func printTasks(){
         print(tasks)
+    }
+    
+    func getTasks() -> [String]{
+        return tasks
+    }
+    
+    func writeTasksIntoFile(){
+        var tasksString = ""
+        for task in tasks{
+            tasksString+=task+";"
+        }
+        LocalFileManager.instance.writeFile(fileName: "tasks", text: tasksString)
+    }
+    
+    func readTasksFromFile(){
+        let tasksList = LocalFileManager.instance.readFile(fileName: "tasks")
+        let readTasks = tasksList.split(separator: ";")
+        for readTask in readTasks{
+            tasks.append(String(readTask))
+        }
     }
 }

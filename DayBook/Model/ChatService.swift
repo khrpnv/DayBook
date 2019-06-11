@@ -27,6 +27,10 @@ class ChatService {
         scaledrone.connect()
     }
     
+    func disconnect() {
+        scaledrone.disconnect()
+    }
+    
     func sendMessage(_ message: String) {
         room?.publish(message: message)
     }
@@ -63,5 +67,11 @@ extension ChatService: ScaledroneRoomDelegate {
             text: text,
             messageId: UUID().uuidString)
         messageCallback(message)
+        if member.name != User.instance.getUserName(){
+            if MessagesInspector.instance.messageContainTag(message: text){
+                SentInfo.instance.setInfo(currentInfo: text, senderName: member.name)
+                NotificationCenter.default.post(name: .TaggedMessage, object: nil)
+            }
+        }
     }
 }

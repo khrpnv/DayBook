@@ -16,24 +16,37 @@ class ChatViewController: MessagesViewController {
     private var messages: [Message] = []
     private var member: Member!
     private var chatService: ChatService!
+    var taskToSend: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let userName = User.instance.getUserName()
         member = Member(name: userName, color: .random)
-        styleMessageInputBar()
+        setupChatUI()
         setDelegates()
+        setObservers()
         initializeChatService()
         chatService.connect()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        messageInputBar.inputTextView.text = taskToSend
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        chatService.disconnect()
+    }
+    
     //MARK: - setup functions
-    private func styleMessageInputBar(){
+    private func setupChatUI(){
         messageInputBar.delegate = self
         messageInputBar.inputTextView.tintColor = .primaryColor
         messageInputBar.sendButton.setImage(UIImage(named: "send"), for: .normal)
         messageInputBar.sendButton.title = ""
         messageInputBar.inputTextView.placeholder = "New Message"
+        messagesCollectionView.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.9294117647, blue: 0.8980392157, alpha: 1)
     }
     
     private func setDelegates(){
@@ -50,6 +63,10 @@ class ChatViewController: MessagesViewController {
             self?.messagesCollectionView.reloadData()
             self?.messagesCollectionView.scrollToBottom(animated: true)
         })
+    }
+    
+    private func setObservers(){
+        NotificationCenter.default.addObserver(self, selector: #selector(getTaggedMessage), name: .TaggedMessage, object: nil)
     }
 }
 
@@ -108,5 +125,14 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         inputBar.inputTextView.text = ""
         self.messagesCollectionView.reloadData()
         self.messagesCollectionView.scrollToBottom(animated: true)
+    }
+}
+
+//MARK: - Notifications
+extension ChatViewController{
+    @objc func getTaggedMessage(){
+        let message = SentInfo.instance.getInfo()
+        let user = SentInfo.instance.getSenderName()
+        self.present(UIAlertController.SaveFromMessageActionSheet(message: message, sender: user), animated: true, completion: nil)
     }
 }

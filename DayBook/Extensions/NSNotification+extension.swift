@@ -9,5 +9,6 @@
 import Foundation
 
 extension NSNotification.Name{
-    static let SomethingWentWrong = NSNotification.Name("SomethingWentWrong")
+    static let TaggedMessage = NSNotification.Name("TaggedMessage")
+    static let AddTask = NSNotification.Name("AddTask")
 }

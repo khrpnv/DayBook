@@ -20,6 +20,12 @@
 		EA30051222AEF096004911CB /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30051122AEF096004911CB /* ChatService.swift */; };
 		EA30051422AF0CCF004911CB /* NSNotification+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30051322AF0CCF004911CB /* NSNotification+extension.swift */; };
 		EA30051822AF13F1004911CB /* TODOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30051722AF13F1004911CB /* TODOManager.swift */; };
+		EA436A8D22B00A4200B53A42 /* MessagesInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA436A8C22B00A4200B53A42 /* MessagesInspector.swift */; };
+		EA436A8F22B00CBB00B53A42 /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA436A8E22B00CBB00B53A42 /* NotesManager.swift */; };
+		EA436A9122B00DA300B53A42 /* ShopListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA436A9022B00DA300B53A42 /* ShopListManager.swift */; };
+		EA436A9322B015A800B53A42 /* UIAlertController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA436A9222B015A800B53A42 /* UIAlertController+extension.swift */; };
+		EA436A9522B037EC00B53A42 /* SentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA436A9422B037EC00B53A42 /* SentInfo.swift */; };
+		EA436A9922B0641300B53A42 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA436A9822B0641300B53A42 /* LocalFileManager.swift */; };
 		EA6C17B922ABA8D300AE2C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6C17B822ABA8D300AE2C5E /* AppDelegate.swift */; };
 		EA6C17BE22ABA8D300AE2C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6C17BC22ABA8D300AE2C5E /* Main.storyboard */; };
 		EA6C17C322ABA8D300AE2C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6C17C122ABA8D300AE2C5E /* LaunchScreen.storyboard */; };
@@ -47,6 +53,12 @@
 		EA30051122AEF096004911CB /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		EA30051322AF0CCF004911CB /* NSNotification+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+extension.swift"; sourceTree = "<group>"; };
 		EA30051722AF13F1004911CB /* TODOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOManager.swift; sourceTree = "<group>"; };
+		EA436A8C22B00A4200B53A42 /* MessagesInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesInspector.swift; sourceTree = "<group>"; };
+		EA436A8E22B00CBB00B53A42 /* NotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesManager.swift; sourceTree = "<group>"; };
+		EA436A9022B00DA300B53A42 /* ShopListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListManager.swift; sourceTree = "<group>"; };
+		EA436A9222B015A800B53A42 /* UIAlertController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+extension.swift"; sourceTree = "<group>"; };
+		EA436A9422B037EC00B53A42 /* SentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentInfo.swift; sourceTree = "<group>"; };
+		EA436A9822B0641300B53A42 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		EA6C17B522ABA8D300AE2C5E /* DayBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6C17B822ABA8D300AE2C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6C17BD22ABA8D300AE2C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +139,11 @@
 				EA30050D22AEEF72004911CB /* Message.swift */,
 				EA30051122AEF096004911CB /* ChatService.swift */,
 				EA30051722AF13F1004911CB /* TODOManager.swift */,
+				EA436A8C22B00A4200B53A42 /* MessagesInspector.swift */,
+				EA436A8E22B00CBB00B53A42 /* NotesManager.swift */,
+				EA436A9022B00DA300B53A42 /* ShopListManager.swift */,
+				EA436A9422B037EC00B53A42 /* SentInfo.swift */,
+				EA436A9822B0641300B53A42 /* LocalFileManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +189,7 @@
 				EAA837C422AD76C000B0FA4D /* UIButton+extension.swift */,
 				EA30050F22AEF068004911CB /* UIColor+extension.swift */,
 				EA30051322AF0CCF004911CB /* NSNotification+extension.swift */,
+				EA436A9222B015A800B53A42 /* UIAlertController+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -354,9 +372,15 @@
 				EA30050C22AEED64004911CB /* ChatStartPageViewController.swift in Sources */,
 				EA225DBA22AD8B9B00C0DC01 /* NotesViewController.swift in Sources */,
 				EAA837C022AD6F1700B0FA4D /* UIView+extension.swift in Sources */,
+				EA436A9922B0641300B53A42 /* LocalFileManager.swift in Sources */,
+				EA436A8F22B00CBB00B53A42 /* NotesManager.swift in Sources */,
+				EA436A9122B00DA300B53A42 /* ShopListManager.swift in Sources */,
+				EA436A8D22B00A4200B53A42 /* MessagesInspector.swift in Sources */,
+				EA436A9322B015A800B53A42 /* UIAlertController+extension.swift in Sources */,
 				EA225DBC22AD8CE700C0DC01 /* WeatherViewController.swift in Sources */,
 				EA225DC222AD8D1F00C0DC01 /* BudgetViewController.swift in Sources */,
 				EA30051422AF0CCF004911CB /* NSNotification+extension.swift in Sources */,
+				EA436A9522B037EC00B53A42 /* SentInfo.swift in Sources */,
 				EA30051222AEF096004911CB /* ChatService.swift in Sources */,
 				EA11C81522AD695800D3FE84 /* User.swift in Sources */,
 				EA30050E22AEEF72004911CB /* Message.swift in Sources */,

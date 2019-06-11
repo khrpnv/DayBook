@@ -190,9 +190,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0k-pG-KwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.8000000000002" y="364.7676161919041"/>
+            <point key="canvasLocation" x="3548" y="364.7676161919041"/>
         </scene>
-        <!--TODO-->
+        <!--Monday-->
         <scene sceneID="5sW-dZ-EE6">
             <objects>
                 <viewController id="V9k-ZA-l4c" customClass="TODOViewController" customModule="DayBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -200,35 +200,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWv-ud-elt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Tsg-q4-WMl"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="TODO" id="D5A-cF-mDn">
-                                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="0AK-t6-TMv">
-                                            <connections>
-                                                <action selector="logOut:" destination="V9k-ZA-l4c" id="Lft-7P-1vo"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KyO-GL-EHf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="47" id="1ao-Rv-g7T">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="47"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ao-Rv-g7T" id="tI5-ba-Hfx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="46.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MWv-ud-elt" firstAttribute="trailing" secondItem="dj7-V3-Rdg" secondAttribute="trailing" id="OJw-uh-6lT"/>
-                            <constraint firstItem="MWv-ud-elt" firstAttribute="top" secondItem="dj7-V3-Rdg" secondAttribute="top" id="ZgA-os-RTq"/>
-                            <constraint firstItem="MWv-ud-elt" firstAttribute="leading" secondItem="dj7-V3-Rdg" secondAttribute="leading" id="ZiC-m9-rUF"/>
+                            <constraint firstItem="KyO-GL-EHf" firstAttribute="top" secondItem="dj7-V3-Rdg" secondAttribute="top" id="NXW-o4-DEw"/>
+                            <constraint firstItem="KyO-GL-EHf" firstAttribute="leading" secondItem="dj7-V3-Rdg" secondAttribute="leading" id="aZr-t1-wd9"/>
+                            <constraint firstItem="dj7-V3-Rdg" firstAttribute="trailing" secondItem="KyO-GL-EHf" secondAttribute="trailing" id="hR1-Jy-DIk"/>
+                            <constraint firstItem="dj7-V3-Rdg" firstAttribute="bottom" secondItem="KyO-GL-EHf" secondAttribute="bottom" id="heM-WN-eWd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dj7-V3-Rdg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="TODO" image="todo" id="vpq-f9-nay"/>
+                    <navigationItem key="navigationItem" title="Monday" id="hYp-Tp-0ea">
+                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="0AK-t6-TMv">
+                            <connections>
+                                <action selector="logOut:" destination="V9k-ZA-l4c" id="Lft-7P-1vo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HY9-8Z-WUA">
+                            <connections>
+                                <action selector="addTaskPressed:" destination="V9k-ZA-l4c" id="6Y1-FS-hF3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addTask" destination="HY9-8Z-WUA" id="MeB-p9-wfs"/>
+                        <outlet property="tableView" destination="KyO-GL-EHf" id="WfR-VT-om5"/>
+                        <segue destination="bOX-PC-KgJ" kind="show" identifier="shareTask" id="nnY-Eg-KcV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0J-kw-1ie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638" y="858"/>
+            <point key="canvasLocation" x="2532" y="1032"/>
         </scene>
         <!--Budget-->
         <scene sceneID="duw-pv-Z4t">
@@ -237,42 +253,20 @@
                     <view key="view" contentMode="scaleToFill" id="khz-pO-Oog">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5E-B4-t2g">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ArB-8J-QgJ"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Budget" id="67i-Pl-2C1">
-                                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="BVp-AA-Jyt">
-                                            <connections>
-                                                <action selector="logOut:" destination="k9a-Iv-gYc" id="kpq-Ad-Wco"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="z5E-B4-t2g" firstAttribute="leading" secondItem="bPf-nN-ikY" secondAttribute="leading" id="C67-XR-2nv"/>
-                            <constraint firstItem="z5E-B4-t2g" firstAttribute="top" secondItem="bPf-nN-ikY" secondAttribute="top" id="LZG-Nk-FaI"/>
-                            <constraint firstAttribute="trailing" secondItem="z5E-B4-t2g" secondAttribute="trailing" id="ooX-fJ-dYn"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="bPf-nN-ikY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Budget" image="budget" id="a6P-MS-h2v">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="0.0" green="0.52156862745098043" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Budget" id="Oc1-dg-b8P">
+                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="BVp-AA-Jyt">
+                            <connections>
+                                <action selector="logOut:" destination="k9a-Iv-gYc" id="kpq-Ad-Wco"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNJ-0g-nlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="1231"/>
+            <point key="canvasLocation" x="4487.1999999999998" y="1230.1349325337333"/>
         </scene>
         <!--Chat-->
         <scene sceneID="dIP-7p-2Xp">
@@ -291,7 +285,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.92941176470588238" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iii-ZM-wMy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="1ud-FG-qeQ">
@@ -306,7 +300,7 @@
             </objects>
             <point key="canvasLocation" x="3548" y="-1236.4317841079462"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Room-->
         <scene sceneID="oAM-ix-vRI">
             <objects>
                 <viewController id="bOX-PC-KgJ" customClass="ChatViewController" customModule="DayBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -316,10 +310,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oEI-B4-0tK"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Room" id="eMa-py-uQf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R80-jS-0Ip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4498" y="-1236"/>
+            <point key="canvasLocation" x="4767" y="-1236"/>
         </scene>
         <!--Notes-->
         <scene sceneID="nEf-FQ-lax">
@@ -328,36 +323,20 @@
                     <view key="view" contentMode="scaleToFill" id="XL1-Ou-wja">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzg-UG-V9Z">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="esS-Gl-U2d"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Notes" id="CbN-Gv-KqK">
-                                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="4Ja-O5-y5c">
-                                            <connections>
-                                                <action selector="logOut:" destination="UFm-tI-lex" id="M1C-D0-79r"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qzg-UG-V9Z" firstAttribute="top" secondItem="SMb-dS-7NU" secondAttribute="top" id="JyY-Po-Kw5"/>
-                            <constraint firstItem="qzg-UG-V9Z" firstAttribute="trailing" secondItem="SMb-dS-7NU" secondAttribute="trailing" id="dCp-VD-SSj"/>
-                            <constraint firstItem="qzg-UG-V9Z" firstAttribute="leading" secondItem="SMb-dS-7NU" secondAttribute="leading" id="dGF-Yh-H1L"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="SMb-dS-7NU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Notes" image="notes" id="Qa3-Lj-aIr"/>
+                    <navigationItem key="navigationItem" title="Notes" id="gas-HG-TQQ">
+                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="4Ja-O5-y5c">
+                            <connections>
+                                <action selector="logOut:" destination="UFm-tI-lex" id="M1C-D0-79r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nV0-m3-wnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2646" y="-402"/>
+            <point key="canvasLocation" x="3584.8000000000002" y="-402.54872563718146"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2a4-RL-abl">
@@ -374,11 +353,11 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="UFm-tI-lex" kind="relationship" relationship="viewControllers" id="PSY-rf-tbr"/>
+                        <segue destination="j0g-if-yQi" kind="relationship" relationship="viewControllers" id="PSY-rf-tbr"/>
                         <segue destination="cM9-PC-2cL" kind="relationship" relationship="viewControllers" id="lmV-0u-fCw"/>
-                        <segue destination="V9k-ZA-l4c" kind="relationship" relationship="viewControllers" id="lXQ-7C-JN1"/>
+                        <segue destination="0KY-ob-Pbe" kind="relationship" relationship="viewControllers" id="lXQ-7C-JN1"/>
                         <segue destination="LxO-WA-lfW" kind="relationship" relationship="viewControllers" id="0Y4-ib-jTN"/>
-                        <segue destination="k9a-Iv-gYc" kind="relationship" relationship="viewControllers" id="gwG-sC-eRa"/>
+                        <segue destination="0zu-Xr-iqq" kind="relationship" relationship="viewControllers" id="gwG-sC-eRa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9T-np-QeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,6 +383,69 @@
             </objects>
             <point key="canvasLocation" x="2608.8000000000002" y="-1236.4317841079462"/>
         </scene>
+        <!--Notes-->
+        <scene sceneID="Tpg-Vy-gxn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j0g-if-yQi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notes" image="notes" id="Qa3-Lj-aIr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="shd-pZ-dfQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UFm-tI-lex" kind="relationship" relationship="rootViewController" id="YPc-3k-Mss"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="reM-CV-fBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2645.5999999999999" y="-402.54872563718146"/>
+        </scene>
+        <!--TODO-->
+        <scene sceneID="DFv-UF-jVD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0KY-ob-Pbe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TODO" image="todo" id="vpq-f9-nay"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x9H-gC-lXH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="V9k-ZA-l4c" kind="relationship" relationship="rootViewController" id="hNH-Lb-vru"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7A-Sc-M2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="1033"/>
+        </scene>
+        <!--Budget-->
+        <scene sceneID="L3j-qB-Fr5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0zu-Xr-iqq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Budget" image="budget" id="a6P-MS-h2v">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="0.52156862745098043" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5qv-ML-gQW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k9a-Iv-gYc" kind="relationship" relationship="rootViewController" id="ERQ-01-NQm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V2M-Uj-8ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3548" y="1230.1349325337333"/>
+        </scene>
     </scenes>
     <resources>
         <image name="01d" width="512" height="512"/>
@@ -414,4 +456,8 @@
         <image name="todo" width="24" height="24"/>
         <image name="weather" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nnY-Eg-KcV"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
