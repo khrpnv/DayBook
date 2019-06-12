@@ -22,6 +22,10 @@ class TODOManager{
         tasks.remove(at: index)
     }
     
+    func editTask(at index: Int, for newValue: String){
+        tasks[index] = newValue
+    }
+    
     func printTasks(){
         print(tasks)
     }

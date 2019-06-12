@@ -11,4 +11,7 @@ import Foundation
 extension NSNotification.Name{
     static let TaggedMessage = NSNotification.Name("TaggedMessage")
     static let AddTask = NSNotification.Name("AddTask")
+    static let EditTask = NSNotification.Name("EditTask")
+    static let AddProduct = NSNotification.Name("AddProduct")
+    static let EditProduct = NSNotification.Name("EditProduct")
 }

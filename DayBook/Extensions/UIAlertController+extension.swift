@@ -23,17 +23,44 @@ extension UIAlertController{
         return optionMenu
     }
     
-    static func AddTaskAlertWindow() -> UIAlertController {
-        let alertController = UIAlertController(title: "Add new task", message: nil, preferredStyle: .alert)
+    static func AddTaskAlertWindow(tag: Tag) -> UIAlertController {
+        let alertController = UIAlertController(title: "Add \(tag.rawValue.lowercased())", message: nil, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Add", style: .default) { (_) in
             if let txtField = alertController.textFields?.first, let text = txtField.text {
-                TODOManager.instance.addTask(text: text)
-                NotificationCenter.default.post(name: .AddTask, object: nil)
+                if tag == .Task{
+                    TODOManager.instance.addTask(text: text)
+                    NotificationCenter.default.post(name: .AddTask, object: nil)
+                } else if tag == .Product{
+                    ShopListManager.instance.addProduct(product: text)
+                    NotificationCenter.default.post(name: .AddProduct, object: nil)
+                }
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
         alertController.addTextField { (textField) in
-            textField.placeholder = "Task"
+            textField.placeholder = tag.rawValue
+        }
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        return alertController
+    }
+    
+    static func EditTaskAlertWindow(index: Int, oldValue: String, tag: Tag) -> UIAlertController {
+        let alertController = UIAlertController(title: "Edit \(tag.rawValue.lowercased())", message: nil, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Edit", style: .default) { (_) in
+            if let txtField = alertController.textFields?.first, let text = txtField.text {
+                if tag == .Task{
+                    TODOManager.instance.editTask(at: index, for: text)
+                    NotificationCenter.default.post(name: .EditTask, object: nil)
+                } else if tag == .Product{
+                    ShopListManager.instance.editProduct(at: index, newValue: text)
+                    NotificationCenter.default.post(name: .EditProduct, object: nil)
+                }
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        alertController.addTextField { (textField) in
+            textField.text = oldValue
         }
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)

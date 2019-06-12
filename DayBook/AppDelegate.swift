@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        ShopListManager.instance.readTasksFromFile()
         GIDSignIn.sharedInstance().clientID = "54554374420-n976c75frjsvr77sm5f7mhrpmvh6r6j8.apps.googleusercontent.com"
         return true
     }
@@ -47,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         TODOManager.instance.writeTasksIntoFile()
+        ShopListManager.instance.writeTasksIntoFile()
     }
 
 

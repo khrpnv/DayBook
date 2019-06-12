@@ -11,6 +11,7 @@ import GoogleSignIn
 
 class TODOViewController: UIViewController {
 
+    @IBOutlet private weak var shoppingListBtn: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var addTask: UIBarButtonItem!
     private var dataSource: [String] = []{
@@ -29,6 +30,7 @@ class TODOViewController: UIViewController {
         styleNavigationBar()
         setupDataSource()
         setupObservers()
+        styleShoppingButton()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,17 +47,13 @@ class TODOViewController: UIViewController {
     }
     
     @IBAction func addTaskPressed(_ sender: Any) {
-        self.present(UIAlertController.AddTaskAlertWindow(), animated: true, completion: nil)
+        self.present(UIAlertController.AddTaskAlertWindow(tag: .Task), animated: true, completion: nil)
     }
     
     func styleNavigationBar(){
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1411764706, green: 0.4784313725, blue: 0.3843137255, alpha: 1)
         self.navigationController?.navigationBar.barStyle = .default
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let weekday = dateFormatter.string(from: date)
-        self.title = weekday
+        self.tableView.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.9294117647, blue: 0.8980392157, alpha: 1)
     }
     
     func setupDataSource(){
@@ -64,6 +62,17 @@ class TODOViewController: UIViewController {
     
     func setupObservers(){
         NotificationCenter.default.addObserver(self, selector: #selector(updateTableView), name: .AddTask, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTableView), name: .EditTask, object: nil)
+    }
+    
+    func styleShoppingButton(){
+        let disclosure = UITableViewCell()
+        disclosure.frame = shoppingListBtn.bounds
+        disclosure.accessoryType = .disclosureIndicator
+        disclosure.isUserInteractionEnabled = false
+        shoppingListBtn.addSubview(disclosure)
+        shoppingListBtn.addTopBorderWithColor(color: .lightGray, width: 0.5)
+        shoppingListBtn.addBottomBorderWithColor(color: .lightGray, width: 0.5)
     }
 }
 
@@ -74,8 +83,12 @@ extension TODOViewController: UITableViewDelegate, UITableViewDataSource{
         return dataSource.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Tasks"
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) 
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         cell.textLabel?.text = "⚫️ " + dataSource[indexPath.row]
         return cell
     }
@@ -86,12 +99,16 @@ extension TODOViewController: UITableViewDelegate, UITableViewDataSource{
             self?.updateTableView()
         }
         delete.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        let share = UITableViewRowAction(style: .normal, title: "Share") { [weak self](action, indexPath) in
+        let share = UITableViewRowAction(style: .normal, title: "Share") { [weak self] (action, indexPath) in
             self?.taskToSend += self?.dataSource[indexPath.row] ?? ""
             self?.performSegue(withIdentifier: "shareTask", sender: nil)
         }
         share.backgroundColor = #colorLiteral(red: 0.1955395341, green: 0.5143008232, blue: 1, alpha: 1)
-        return [delete, share]
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { [weak self] (action, indexPath) in
+            self?.present(UIAlertController.EditTaskAlertWindow(index: indexPath.row, oldValue: self?.dataSource[indexPath.row] ?? "", tag: .Task), animated: true, completion: nil)
+        }
+        edit.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        return [delete, share, edit]
     }
 }
 

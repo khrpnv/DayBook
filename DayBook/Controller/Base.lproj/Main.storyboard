@@ -192,7 +192,7 @@
             </objects>
             <point key="canvasLocation" x="3548" y="364.7676161919041"/>
         </scene>
-        <!--Monday-->
+        <!--Tasks-->
         <scene sceneID="5sW-dZ-EE6">
             <objects>
                 <viewController id="V9k-ZA-l4c" customClass="TODOViewController" customModule="DayBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -200,12 +200,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KyO-GL-EHf">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KyO-GL-EHf">
+                                <rect key="frame" x="0.0" y="118" width="375" height="500"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="47" id="1ao-Rv-g7T">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="47"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="47" id="1ao-Rv-g7T">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ao-Rv-g7T" id="tI5-ba-Hfx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="46.5"/>
@@ -214,17 +215,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJi-fZ-bOd">
+                                <rect key="frame" x="0.0" y="69" width="375" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="   🛒 Shopping list"/>
+                                <connections>
+                                    <segue destination="BJ0-QO-2Q5" kind="show" id="pjo-ce-akN"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.92941176470588238" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KyO-GL-EHf" firstAttribute="top" secondItem="dj7-V3-Rdg" secondAttribute="top" id="NXW-o4-DEw"/>
+                            <constraint firstItem="PJi-fZ-bOd" firstAttribute="top" secondItem="dj7-V3-Rdg" secondAttribute="top" constant="5" id="8qp-uw-uMf"/>
+                            <constraint firstItem="KyO-GL-EHf" firstAttribute="top" secondItem="dj7-V3-Rdg" secondAttribute="top" constant="54" id="NXW-o4-DEw"/>
+                            <constraint firstItem="dj7-V3-Rdg" firstAttribute="trailing" secondItem="PJi-fZ-bOd" secondAttribute="trailing" id="Nfu-hn-el2"/>
                             <constraint firstItem="KyO-GL-EHf" firstAttribute="leading" secondItem="dj7-V3-Rdg" secondAttribute="leading" id="aZr-t1-wd9"/>
+                            <constraint firstItem="PJi-fZ-bOd" firstAttribute="leading" secondItem="dj7-V3-Rdg" secondAttribute="leading" id="fRB-vi-qgN"/>
                             <constraint firstItem="dj7-V3-Rdg" firstAttribute="trailing" secondItem="KyO-GL-EHf" secondAttribute="trailing" id="hR1-Jy-DIk"/>
                             <constraint firstItem="dj7-V3-Rdg" firstAttribute="bottom" secondItem="KyO-GL-EHf" secondAttribute="bottom" id="heM-WN-eWd"/>
+                            <constraint firstItem="KyO-GL-EHf" firstAttribute="top" secondItem="PJi-fZ-bOd" secondAttribute="bottom" constant="5" id="iux-dB-yKY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dj7-V3-Rdg"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Monday" id="hYp-Tp-0ea">
+                    <navigationItem key="navigationItem" title="Tasks" id="hYp-Tp-0ea">
                         <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="0AK-t6-TMv">
                             <connections>
                                 <action selector="logOut:" destination="V9k-ZA-l4c" id="Lft-7P-1vo"/>
@@ -238,6 +252,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addTask" destination="HY9-8Z-WUA" id="MeB-p9-wfs"/>
+                        <outlet property="shoppingListBtn" destination="PJi-fZ-bOd" id="R0k-lw-Gnn"/>
                         <outlet property="tableView" destination="KyO-GL-EHf" id="WfR-VT-om5"/>
                         <segue destination="bOX-PC-KgJ" kind="show" identifier="shareTask" id="nnY-Eg-KcV"/>
                     </connections>
@@ -276,16 +291,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJV-dX-468">
-                                <rect key="frame" x="164" y="305" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJV-dX-468">
+                                <rect key="frame" x="102.5" y="409" width="170" height="40"/>
+                                <color key="backgroundColor" red="0.10238055033830111" green="0.83813780491995404" blue="0.93805520304568524" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="hX5-c4-rsN"/>
+                                    <constraint firstAttribute="height" constant="40" id="okc-GM-QxE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="START CHATTING">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="bOX-PC-KgJ" kind="show" id="zJn-ko-xjH"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-Ji-Z4e">
+                                <rect key="frame" x="77.5" y="139" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Jib-sm-Osl"/>
+                                    <constraint firstAttribute="width" constant="220" id="LYl-uS-pyD"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.92941176470588238" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nJV-dX-468" firstAttribute="centerX" secondItem="Ygn-k7-6gr" secondAttribute="centerX" id="FxU-cg-bFF"/>
+                            <constraint firstItem="sfT-Ji-Z4e" firstAttribute="top" secondItem="iii-ZM-wMy" secondAttribute="top" constant="75" id="Hec-xI-b8J"/>
+                            <constraint firstItem="nJV-dX-468" firstAttribute="top" secondItem="sfT-Ji-Z4e" secondAttribute="bottom" constant="50" id="OFg-Gj-vss"/>
+                            <constraint firstItem="sfT-Ji-Z4e" firstAttribute="centerX" secondItem="Ygn-k7-6gr" secondAttribute="centerX" id="RlU-uR-lrD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iii-ZM-wMy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="1ud-FG-qeQ">
@@ -295,6 +330,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ibStartButton" destination="nJV-dX-468" id="pzM-ND-dh2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajj-WH-ycr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -446,10 +484,59 @@
             </objects>
             <point key="canvasLocation" x="3548" y="1230.1349325337333"/>
         </scene>
+        <!--Shopping list-->
+        <scene sceneID="yI9-fV-6HT">
+            <objects>
+                <viewController id="BJ0-QO-2Q5" customClass="ShoppingListViewController" customModule="DayBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7nf-VI-4eG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Ba-qI-0yh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductCell" id="ohJ-qX-eO8">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ohJ-qX-eO8" id="I47-cs-G6U">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zFy-1Y-0uX" firstAttribute="bottom" secondItem="5Ba-qI-0yh" secondAttribute="bottom" id="84T-KL-v8W"/>
+                            <constraint firstItem="5Ba-qI-0yh" firstAttribute="leading" secondItem="zFy-1Y-0uX" secondAttribute="leading" id="8Vx-dq-YtH"/>
+                            <constraint firstItem="zFy-1Y-0uX" firstAttribute="trailing" secondItem="5Ba-qI-0yh" secondAttribute="trailing" id="LQD-Rd-37u"/>
+                            <constraint firstItem="5Ba-qI-0yh" firstAttribute="top" secondItem="zFy-1Y-0uX" secondAttribute="top" id="z8m-AS-RWs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zFy-1Y-0uX"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Shopping list" id="2hS-Wy-4nz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="poX-rd-cCz">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BJ0-QO-2Q5" id="6TL-Jo-5UZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="5Ba-qI-0yh" id="IW8-zd-hr6"/>
+                        <segue destination="bOX-PC-KgJ" kind="show" identifier="shareProduct" id="Ysn-Zl-c3s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WQ-e6-Gyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2532" y="1831"/>
+        </scene>
     </scenes>
     <resources>
         <image name="01d" width="512" height="512"/>
         <image name="budget" width="24" height="24"/>
+        <image name="chatIcon" width="256" height="256"/>
         <image name="logout" width="24" height="24"/>
         <image name="message" width="24" height="24"/>
         <image name="notes" width="24" height="24"/>

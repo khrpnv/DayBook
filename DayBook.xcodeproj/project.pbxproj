@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0475F3A733C5674BF445050 /* Pods_DayBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBA2CFA6D080EB1ECEA0199 /* Pods_DayBook.framework */; };
+		EA0C9EC422B0FD51004A494A /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C9EC322B0FD51004A494A /* ShoppingListViewController.swift */; };
 		EA11C81522AD695800D3FE84 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA11C81422AD695800D3FE84 /* User.swift */; };
 		EA225DB822AD84E400C0DC01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA225DB722AD84E400C0DC01 /* Assets.xcassets */; };
 		EA225DBA22AD8B9B00C0DC01 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA225DB922AD8B9B00C0DC01 /* NotesViewController.swift */; };
@@ -35,12 +36,14 @@
 		EAA837C322AD718200B0FA4D /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA837C222AD718200B0FA4D /* IndieFlower.ttf */; };
 		EAA837C522AD76C000B0FA4D /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA837C422AD76C000B0FA4D /* UIButton+extension.swift */; };
 		EADFE68322AE554900224F31 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADFE68222AE554900224F31 /* ChatViewController.swift */; };
+		EAF5314C22B0F268002E370F /* TagsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF5314B22B0F268002E370F /* TagsEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C95A67587FD4235B4B0C3F4 /* Pods-DayBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DayBook/Pods-DayBook.debug.xcconfig"; sourceTree = "<group>"; };
 		6CBA2CFA6D080EB1ECEA0199 /* Pods_DayBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3B0505598BCCB98A0C8353 /* Pods-DayBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayBook/Pods-DayBook.release.xcconfig"; sourceTree = "<group>"; };
+		EA0C9EC322B0FD51004A494A /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		EA11C81422AD695800D3FE84 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EA225DB722AD84E400C0DC01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA225DB922AD8B9B00C0DC01 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		EAA837C222AD718200B0FA4D /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndieFlower.ttf; sourceTree = "<group>"; };
 		EAA837C422AD76C000B0FA4D /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 		EADFE68222AE554900224F31 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		EAF5314B22B0F268002E370F /* TagsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				EA436A9022B00DA300B53A42 /* ShopListManager.swift */,
 				EA436A9422B037EC00B53A42 /* SentInfo.swift */,
 				EA436A9822B0641300B53A42 /* LocalFileManager.swift */,
+				EAF5314B22B0F268002E370F /* TagsEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				EA225DC122AD8D1F00C0DC01 /* BudgetViewController.swift */,
 				EADFE68222AE554900224F31 /* ChatViewController.swift */,
 				EA30050B22AEED64004911CB /* ChatStartPageViewController.swift */,
+				EA0C9EC322B0FD51004A494A /* ShoppingListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,6 +390,8 @@
 				EA30051222AEF096004911CB /* ChatService.swift in Sources */,
 				EA11C81522AD695800D3FE84 /* User.swift in Sources */,
 				EA30050E22AEEF72004911CB /* Message.swift in Sources */,
+				EAF5314C22B0F268002E370F /* TagsEnum.swift in Sources */,
+				EA0C9EC422B0FD51004A494A /* ShoppingListViewController.swift in Sources */,
 				EA30051822AF13F1004911CB /* TODOManager.swift in Sources */,
 				EADFE68322AE554900224F31 /* ChatViewController.swift in Sources */,
 				EAA837C522AD76C000B0FA4D /* UIButton+extension.swift in Sources */,
