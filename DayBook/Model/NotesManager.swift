@@ -56,6 +56,7 @@ class NotesManager{
     }
     
     func readTasksFromFile(){
+        notes = []
         let notesList = LocalFileManager.instance.readFile(fileName: "notes")
         let notesSplit = notesList.split(separator: "|")
         for note in notesSplit{
