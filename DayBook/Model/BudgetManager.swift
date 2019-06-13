@@ -73,6 +73,9 @@ class BudgetManager{
     
     func readTasksFromFile(){
         let budgetList = LocalFileManager.instance.readFile(fileName: "budget")
+        if budgetList.count == 0{
+            return
+        }
         let startSumData = budgetList.split(separator: "\n")
         self.startSum = String(startSumData[0]).toDouble() ?? 1000
         if startSumData.count == 1{
