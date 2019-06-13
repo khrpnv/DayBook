@@ -26,6 +26,11 @@ class ShoppingListViewController: UIViewController {
         styleView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        taskToSend = "#Buy: "
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destVC = segue.destination as? ChatViewController{
             if segue.identifier == "shareProduct"{

@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TODOManager.instance.writeTasksIntoFile()
         ShopListManager.instance.writeTasksIntoFile()
         NotesManager.instance.writeNotesIntoFile()
+        BudgetManager.instance.writeTasksIntoFile()
     }
 
 

@@ -17,4 +17,6 @@ extension NSNotification.Name{
     static let DeleteNote = NSNotification.Name("DeleteNote")
     static let EditNote = NSNotification.Name("EditNote")
     static let AddNote = NSNotification.Name("AddNote")
+    static let RefreshSum = NSNotification.Name("RefreshSum")
+    static let AddBudgetInfo = NSNotification.Name("AddBudgetInfo")
 }

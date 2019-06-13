@@ -40,6 +40,11 @@ class TODOViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        taskToSend = "#TODO: "
+    }
 
     @IBAction func logOut(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signOut()

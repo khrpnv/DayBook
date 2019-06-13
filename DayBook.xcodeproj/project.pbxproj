@@ -36,6 +36,10 @@
 		EA6C17C322ABA8D300AE2C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6C17C122ABA8D300AE2C5E /* LaunchScreen.storyboard */; };
 		EA6C17CB22ABAA2C00AE2C5E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6C17CA22ABAA2C00AE2C5E /* SignInViewController.swift */; };
 		EA6C17D122ABAB3A00AE2C5E /* GoogleInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6C17D022ABAB3A00AE2C5E /* GoogleInfo.plist */; };
+		EA6C617422B1EE63005F4DD2 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6C617322B1EE63005F4DD2 /* BudgetTableViewCell.swift */; };
+		EA6C617622B1EF6B005F4DD2 /* BudgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6C617522B1EF6B005F4DD2 /* BudgetData.swift */; };
+		EA6C617822B1F008005F4DD2 /* BudgetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6C617722B1F008005F4DD2 /* BudgetManager.swift */; };
+		EA6C617A22B1FA3B005F4DD2 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6C617922B1FA3B005F4DD2 /* String+extension.swift */; };
 		EAA837C022AD6F1700B0FA4D /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA837BF22AD6F1700B0FA4D /* UIView+extension.swift */; };
 		EAA837C322AD718200B0FA4D /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAA837C222AD718200B0FA4D /* IndieFlower.ttf */; };
 		EAA837C522AD76C000B0FA4D /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA837C422AD76C000B0FA4D /* UIButton+extension.swift */; };
@@ -77,6 +81,10 @@
 		EA6C17C422ABA8D300AE2C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6C17CA22ABAA2C00AE2C5E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		EA6C17D022ABAB3A00AE2C5E /* GoogleInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoogleInfo.plist; sourceTree = "<group>"; };
+		EA6C617322B1EE63005F4DD2 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetTableViewCell.swift; path = DayBook/Extensions/BudgetTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		EA6C617522B1EF6B005F4DD2 /* BudgetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetData.swift; sourceTree = "<group>"; };
+		EA6C617722B1F008005F4DD2 /* BudgetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetManager.swift; sourceTree = "<group>"; };
+		EA6C617922B1FA3B005F4DD2 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		EAA837BF22AD6F1700B0FA4D /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		EAA837C222AD718200B0FA4D /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndieFlower.ttf; sourceTree = "<group>"; };
 		EAA837C422AD76C000B0FA4D /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
@@ -158,6 +166,8 @@
 				EA436A9822B0641300B53A42 /* LocalFileManager.swift */,
 				EAF5314B22B0F268002E370F /* TagsEnum.swift */,
 				EA1D804922B1A61000CA6126 /* Note.swift */,
+				EA6C617522B1EF6B005F4DD2 /* BudgetData.swift */,
+				EA6C617722B1F008005F4DD2 /* BudgetManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				EA1D804722B19EEA00CA6126 /* NoteTableViewCell.swift */,
+				EA6C617322B1EE63005F4DD2 /* BudgetTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 				EA30051322AF0CCF004911CB /* NSNotification+extension.swift */,
 				EA436A9222B015A800B53A42 /* UIAlertController+extension.swift */,
 				EA1D804D22B1C09100CA6126 /* UIStackView+extension.swift */,
+				EA6C617922B1FA3B005F4DD2 /* String+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +397,7 @@
 			files = (
 				EA225DBE22AD8CF800C0DC01 /* TODOViewController.swift in Sources */,
 				EA6C17CB22ABAA2C00AE2C5E /* SignInViewController.swift in Sources */,
+				EA6C617422B1EE63005F4DD2 /* BudgetTableViewCell.swift in Sources */,
 				EA6C17B922ABA8D300AE2C5E /* AppDelegate.swift in Sources */,
 				EA30051022AEF068004911CB /* UIColor+extension.swift in Sources */,
 				EA30050C22AEED64004911CB /* ChatStartPageViewController.swift in Sources */,
@@ -398,15 +411,18 @@
 				EA436A9322B015A800B53A42 /* UIAlertController+extension.swift in Sources */,
 				EA225DBC22AD8CE700C0DC01 /* WeatherViewController.swift in Sources */,
 				EA1D804822B19EEA00CA6126 /* NoteTableViewCell.swift in Sources */,
+				EA6C617A22B1FA3B005F4DD2 /* String+extension.swift in Sources */,
 				EA225DC222AD8D1F00C0DC01 /* BudgetViewController.swift in Sources */,
 				EA30051422AF0CCF004911CB /* NSNotification+extension.swift in Sources */,
 				EA436A9522B037EC00B53A42 /* SentInfo.swift in Sources */,
 				EA30051222AEF096004911CB /* ChatService.swift in Sources */,
 				EA11C81522AD695800D3FE84 /* User.swift in Sources */,
 				EA30050E22AEEF72004911CB /* Message.swift in Sources */,
+				EA6C617622B1EF6B005F4DD2 /* BudgetData.swift in Sources */,
 				EAF5314C22B0F268002E370F /* TagsEnum.swift in Sources */,
 				EA0C9EC422B0FD51004A494A /* ShoppingListViewController.swift in Sources */,
 				EA30051822AF13F1004911CB /* TODOManager.swift in Sources */,
+				EA6C617822B1F008005F4DD2 /* BudgetManager.swift in Sources */,
 				EA1D804C22B1BB1200CA6126 /* SingleNoteViewController.swift in Sources */,
 				EA1D804E22B1C09100CA6126 /* UIStackView+extension.swift in Sources */,
 				EADFE68322AE554900224F31 /* ChatViewController.swift in Sources */,

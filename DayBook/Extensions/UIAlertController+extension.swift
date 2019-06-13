@@ -73,4 +73,56 @@ extension UIAlertController{
         alertController.addAction(confirmAction)
         return alertController
     }
+    
+    static func ReloadData() -> UIAlertController{
+        let alertController = UIAlertController(title: "Enter your start amount of money", message: nil, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            if let txtField = alertController.textFields?.first, let text = txtField.text {
+                BudgetManager.instance.setStartSum(value: text.toDouble() ?? 1250.0)
+                BudgetManager.instance.setCurrentSum()
+                BudgetManager.instance.refreshData()
+                NotificationCenter.default.post(name: .RefreshSum, object: nil)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Start sum"
+        }
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        return alertController
+    }
+    
+    static func AddBudgetData() -> UIAlertController{
+        var data: BudgetData = BudgetData()
+        let alertController = UIAlertController(title: "Enter budget data", message: nil, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            if let sumField = alertController.textFields?[0], let textSum = sumField.text {
+                let sign = String(textSum.prefix(1))
+                let currentSum = textSum.toDouble() ?? 0
+                if sign == "-"{
+                    data.lose = true
+                    data.sum = currentSum*(-1)
+                } else {
+                    data.lose = false
+                    data.sum = currentSum
+                }
+            }
+            if let commentField = alertController.textFields?[1], let textComment = commentField.text {
+                data.comment = textComment
+            }
+            BudgetManager.instance.addData(data: data)
+            NotificationCenter.default.post(name: .AddBudgetInfo, object: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        alertController.addTextField { (sumField) in
+            sumField.placeholder = "Sum"
+        }
+        alertController.addTextField { (commentField) in
+            commentField.placeholder = "Comment"
+        }
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        return alertController
+    }
 }
