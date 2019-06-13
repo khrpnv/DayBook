@@ -66,4 +66,11 @@ extension UIAlertController{
         alertController.addAction(cancelAction)
         return alertController
     }
+    
+    static func NoteSaved() -> UIAlertController{
+        let alertController = UIAlertController(title: "Your note was saved successfully.", message: nil, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(confirmAction)
+        return alertController
+    }
 }

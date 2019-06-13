@@ -24,20 +24,27 @@ class MessagesInspector{
         switch tag {
         case "#TODO":
             TODOManager.instance.addTask(text: removeTag(message: message, tag: tag))
+            NotificationCenter.default.post(name: .AddTask, object: nil)
         case "#Note":
-            NotesManager.instance.addNote(title: NotesManager.instance.generateNoteTitle(), content: removeTag(message: message, tag: tag))
+            NotesManager.instance.saveNoteFromMessage(content: removeTag(message: message, tag: tag))
+            NotificationCenter.default.post(name: .AddNote, object: nil)
         case "#Buy":
             ShopListManager.instance.addProduct(product: removeTag(message: message, tag: tag))
+            NotificationCenter.default.post(name: .AddProduct, object: nil)
         default:
             print("No such tag")
         }
     }
     
     public func messageContainTag(message: String) -> Bool{
+        let currentTag = message.split(separator: ":")[0]
+        var result = false
         for tag in tags{
-            return message.contains(tag)
+            if tag == currentTag{
+                result = true
+            }
         }
-        return false
+        return result
     }
     
     public func getTag(message: String) -> String{
