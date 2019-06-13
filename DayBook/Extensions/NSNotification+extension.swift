@@ -19,4 +19,5 @@ extension NSNotification.Name{
     static let AddNote = NSNotification.Name("AddNote")
     static let RefreshSum = NSNotification.Name("RefreshSum")
     static let AddBudgetInfo = NSNotification.Name("AddBudgetInfo")
+    static let ServerError = NSNotification.Name("ServerError")
 }

@@ -125,4 +125,11 @@ extension UIAlertController{
         alertController.addAction(cancelAction)
         return alertController
     }
+    
+    static func ServerError() -> UIAlertController{
+        let alertController = UIAlertController(title: "Server Error", message: "Something went wrong on server side. Please, restart the app.", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(confirmAction)
+        return alertController
+    }
 }

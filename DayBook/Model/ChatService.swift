@@ -60,6 +60,7 @@ extension ChatService: ScaledroneRoomDelegate {
     }
     func scaledroneRoomDidReceiveMessage(room: ScaledroneRoom, message: Any, member: ScaledroneMember?) {
         guard let text = message as? String, let memberData = member?.clientData, let member = Member(fromJSON: memberData) else {
+            NotificationCenter.default.post(name: .ServerError, object: nil)
             return
         }
         let message = Message(

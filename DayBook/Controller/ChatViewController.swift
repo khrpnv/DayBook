@@ -67,6 +67,7 @@ class ChatViewController: MessagesViewController {
     
     private func setObservers(){
         NotificationCenter.default.addObserver(self, selector: #selector(getTaggedMessage), name: .TaggedMessage, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(serverError), name: .ServerError, object: nil)
     }
 }
 
@@ -134,5 +135,9 @@ extension ChatViewController{
         let message = SentInfo.instance.getInfo()
         let user = SentInfo.instance.getSenderName()
         self.present(UIAlertController.SaveFromMessageActionSheet(message: message, sender: user), animated: true, completion: nil)
+    }
+    
+    @objc func serverError(){
+        self.present(UIAlertController.ServerError(), animated: true, completion: nil)
     }
 }
