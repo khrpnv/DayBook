@@ -32,10 +32,12 @@ class ChatViewController: MessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         messageInputBar.inputTextView.text = taskToSend
+        messages = MessagesContainer.instance.getMessages()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        MessagesContainer.instance.setMessages(messages: messages)
         chatService.disconnect()
     }
     

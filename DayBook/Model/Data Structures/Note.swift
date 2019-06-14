@@ -10,9 +10,11 @@ import Foundation
 
 struct Note {
     let title: String
-    let content: String
+    var content: String
+    let id: Int
     
-    init(title: String, content: String) {
+    init(id: Int, title: String, content: String) {
+        self.id = id
         self.title = title
         self.content = content
     }

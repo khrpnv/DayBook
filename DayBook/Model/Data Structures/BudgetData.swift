@@ -11,17 +11,17 @@ import Foundation
 struct BudgetData {
     var sum: Double
     var comment: String
-    var lose: Bool
+    let id: Int
     
-    init(sum: Double, comment:String, lose: Bool) {
+    init(sum: Double, comment:String, id: Int) {
         self.sum = sum
         self.comment = comment
-        self.lose = lose
+        self.id = id
     }
     
     init(){
         self.sum = 0
-        self.comment = ""
-        self.lose = false
+        self.comment = "No comment"
+        self.id = Int(arc4random())
     }
 }

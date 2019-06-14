@@ -13,4 +13,5 @@ target 'DayBook' do
   pod 'Scaledrone'
   pod 'MessageKit'
   pod 'LetterAvatarKit'
+  pod 'SQLite.swift'
 end

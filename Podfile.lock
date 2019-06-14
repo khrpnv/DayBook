@@ -28,6 +28,9 @@ PODS:
     - InputBarAccessoryView (~> 4.2.2)
   - Scaledrone (0.5.0):
     - Starscream (~> 3.1.0)
+  - SQLite.swift (0.12.0):
+    - SQLite.swift/standard (= 0.12.0)
+  - SQLite.swift/standard (0.12.0)
   - Starscream (3.1.0)
   - SwiftyJSON (5.0.0)
 
@@ -38,6 +41,7 @@ DEPENDENCIES:
   - LetterAvatarKit
   - MessageKit
   - Scaledrone
+  - SQLite.swift
   - SwiftyJSON
 
 SPEC REPOS:
@@ -51,6 +55,7 @@ SPEC REPOS:
     - LetterAvatarKit
     - MessageKit
     - Scaledrone
+    - SQLite.swift
     - Starscream
     - SwiftyJSON
 
@@ -64,9 +69,10 @@ SPEC CHECKSUMS:
   LetterAvatarKit: 7fd1ac138a92bb1e1be2f47093c0cbe31e288e39
   MessageKit: e892a9ca49ebe6d82684d3a93ad84021fa23e2c6
   Scaledrone: 7fc6a9ab8e969b0df53fe14b54217db8ddf0715a
+  SQLite.swift: 7cad9db150a03716336e69469ec9559c85aece5b
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 99caf090c6b9fab295a09d4f622f1cce62cb09ec
+PODFILE CHECKSUM: fdbf28d11f63b5f361adb2c759bde2c39aca1f5f
 
 COCOAPODS: 1.5.3

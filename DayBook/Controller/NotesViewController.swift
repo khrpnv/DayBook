@@ -21,7 +21,6 @@ class NotesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotesManager.instance.readTasksFromFile()
         styleNavigationBar()
         styleTableView()
         setupDelegates()
@@ -37,7 +36,7 @@ class NotesViewController: UIViewController {
                 destVC.currentNote = dataSource[indexPath.section]
                 destVC.noteIndex = indexPath.section
             } else if segue.identifier == "addNote"{
-                destVC.currentNote = Note(title: noteTitle, content: "")
+                destVC.currentNote = Note(id: Int(arc4random()), title: noteTitle, content: "")
                 destVC.newNote = true
             }
         }

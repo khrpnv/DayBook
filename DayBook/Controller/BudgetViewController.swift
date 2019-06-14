@@ -21,7 +21,6 @@ class BudgetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        BudgetManager.instance.readTasksFromFile()
         setUpInfo()
         styleNavigationBar()
         setupDelegates()
@@ -70,12 +69,12 @@ extension BudgetViewController: UITableViewDelegate, UITableViewDataSource{
         }
         var indicator = ""
         let data = dataSource[indexPath.row]
-        if data.lose{
+        if data.sum < 0{
             indicator = "-"
         } else {
             indicator = "+"
         }
-        cell.initCell(indicator: indicator, sum: data.sum, comment: data.comment)
+        cell.initCell(indicator: indicator, sum: abs(data.sum), comment: data.comment)
         return cell
     }
 }

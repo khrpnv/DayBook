@@ -67,7 +67,7 @@
                                     <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sm9-2F-z1V"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDR-Ff-VOf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDR-Ff-VOf">
                                 <rect key="frame" x="20" y="267.5" width="335" height="289.5"/>
                                 <string key="text">Dear friend! We know you're looking forward to start!So to make it easy for you we made it possible to Sign In with a single button!So click it and let's simplify your life!</string>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="22"/>
@@ -239,7 +239,7 @@
                         <viewLayoutGuide key="safeArea" id="dj7-V3-Rdg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="hYp-Tp-0ea">
-                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="0AK-t6-TMv">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="0AK-t6-TMv">
                             <connections>
                                 <action selector="logOut:" destination="V9k-ZA-l4c" id="Lft-7P-1vo"/>
                             </connections>
@@ -450,7 +450,7 @@
                         <viewLayoutGuide key="safeArea" id="iii-ZM-wMy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="1ud-FG-qeQ">
-                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="VMo-im-2li">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="VMo-im-2li">
                             <connections>
                                 <action selector="logOut:" destination="grT-4i-Huf" id="hlz-Gd-djI"/>
                             </connections>
@@ -543,7 +543,7 @@
                         <viewLayoutGuide key="safeArea" id="SMb-dS-7NU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="gas-HG-TQQ">
-                        <barButtonItem key="leftBarButtonItem" image="logout" style="plain" id="4Ja-O5-y5c">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="4Ja-O5-y5c">
                             <connections>
                                 <action selector="logOut:" destination="UFm-tI-lex" id="M1C-D0-79r"/>
                             </connections>
@@ -575,22 +575,15 @@
                                 <rect key="frame" x="30" y="581" width="315" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yz-oH-bUV">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="shareIcon"/>
                                         <connections>
                                             <segue destination="bOX-PC-KgJ" kind="show" identifier="sendNote" id="kpr-m2-s2w"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWA-5N-pKW">
-                                        <rect key="frame" x="106.5" y="0.0" width="102" height="30"/>
-                                        <state key="normal" image="saveIcon"/>
-                                        <connections>
-                                            <action selector="saveTask:" destination="zNv-Uq-Pko" eventType="touchUpInside" id="D8q-GK-Th1"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-wJ-Och">
-                                        <rect key="frame" x="213.5" y="0.0" width="101.5" height="30"/>
+                                        <rect key="frame" x="160" y="0.0" width="155" height="30"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="removeIcon"/>
                                         <connections>
@@ -804,14 +797,13 @@
         <image name="message" width="24" height="24"/>
         <image name="notes" width="24" height="24"/>
         <image name="removeIcon" width="30" height="30"/>
-        <image name="saveIcon" width="30" height="30"/>
         <image name="shareIcon" width="30" height="30"/>
         <image name="todo" width="24" height="24"/>
         <image name="weather" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LJ4-4W-etI"/>
-        <segue reference="kpr-m2-s2w"/>
+        <segue reference="nnY-Eg-KcV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

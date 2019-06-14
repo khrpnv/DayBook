@@ -67,13 +67,6 @@ extension UIAlertController{
         return alertController
     }
     
-    static func NoteSaved() -> UIAlertController{
-        let alertController = UIAlertController(title: "Your note was saved successfully.", message: nil, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(confirmAction)
-        return alertController
-    }
-    
     static func ReloadData() -> UIAlertController{
         let alertController = UIAlertController(title: "Enter your start amount of money", message: nil, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Add", style: .default) { (_) in
@@ -100,13 +93,7 @@ extension UIAlertController{
             if let sumField = alertController.textFields?[0], let textSum = sumField.text {
                 let sign = String(textSum.prefix(1))
                 let currentSum = textSum.toDouble() ?? 0
-                if sign == "-"{
-                    data.lose = true
-                    data.sum = currentSum*(-1)
-                } else {
-                    data.lose = false
-                    data.sum = currentSum
-                }
+                data.sum = currentSum
             }
             if let commentField = alertController.textFields?[1], let textComment = commentField.text {
                 data.comment = textComment
